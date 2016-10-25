@@ -419,8 +419,9 @@ namespace LinqToTwitter
 
             // construct REST endpoint, based on input parameters
             Request request = reqProc.BuildUrl(parameters);
+			request.RequestParameters.Add( new QueryParameter( "tweet_mode", "extended" ) );
 
-            string results;
+			string results;
 
              //process request through Twitter
             if (typeof(T) == typeof(Streaming))

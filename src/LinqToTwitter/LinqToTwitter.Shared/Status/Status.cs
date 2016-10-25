@@ -58,7 +58,7 @@ namespace LinqToTwitter
             CreatedAt = status.GetValue<string>("created_at").GetDate(DateTime.MaxValue);
             InReplyToUserID = status.GetValue<ulong>("in_reply_to_user_id");
             Truncated = status.GetValue<bool>("truncated");
-            Text = status.GetValue<string>("text");
+            Text = status.GetValue<string>("full_text");
             Annotation = new Annotation(status.GetValue<JsonData>("annotation"));
             Entities = new Entities(status.GetValue<JsonData>("entities"));
             ExtendedEntities = new Entities(status.GetValue<JsonData>("extended_entities"));
