@@ -811,7 +811,7 @@ namespace LinqToTwitterPcl.Tests.StatusTests
          ""truncated"":false,
          ""id"":184793217231880192,
          ""geo"":null,
-         ""text"":""I just blogged about http:\/\/t.co\/YWHGwOq6 MVC, Web API, Razor and Open Source - Now with Contributions: http:\/\/t.co\/qpevLMZd""
+         ""full_text"":""I just blogged about http:\/\/t.co\/YWHGwOq6 MVC, Web API, Razor and Open Source - Now with Contributions: http:\/\/t.co\/qpevLMZd""
       },
       ""contributors"":null,
       ""coordinates"":{
@@ -874,7 +874,7 @@ namespace LinqToTwitterPcl.Tests.StatusTests
       ""truncated"":false,
       ""id"":184835136037191681,
       ""geo"":null,
-      ""text"":""RT @scottgu: I just blogged about http:\/\/t.co\/YWHGwOq6 MVC, Web API, Razor and Open Source - Now with Contributions: http:\/\/t.co\/qpevLMZd""
+      ""full_text"":""RT @scottgu: I just blogged about http:\/\/t.co\/YWHGwOq6 MVC, Web API, Razor and Open Source - Now with Contributions: http:\/\/t.co\/qpevLMZd""
    }";
 
         const string MultipleStatusResponse = @"[
@@ -941,7 +941,7 @@ namespace LinqToTwitterPcl.Tests.StatusTests
          ""truncated"":false,
          ""id"":184793217231880192,
          ""geo"":null,
-         ""text"":""I just blogged about http:\/\/t.co\/YWHGwOq6 MVC, Web API, Razor and Open Source - Now with Contributions: http:\/\/t.co\/qpevLMZd""
+         ""full_text"":""I just blogged about http:\/\/t.co\/YWHGwOq6 MVC, Web API, Razor and Open Source - Now with Contributions: http:\/\/t.co\/qpevLMZd""
       },
       ""contributors"":null,
       ""coordinates"":{
@@ -1004,7 +1004,7 @@ namespace LinqToTwitterPcl.Tests.StatusTests
       ""truncated"":false,
       ""id"":184835136037191681,
       ""geo"":null,
-      ""text"":""RT @scottgu: I just blogged about http:\/\/t.co\/YWHGwOq6 MVC, Web API, Razor and Open Source - Now with Contributions: http:\/\/t.co\/qpevLMZd""
+      ""full_text"":""RT @scottgu: I just blogged about http:\/\/t.co\/YWHGwOq6 MVC, Web API, Razor and Open Source - Now with Contributions: http:\/\/t.co\/qpevLMZd""
    },
    {
       ""retweeted"":false,

@@ -1668,7 +1668,7 @@ namespace LinqToTwitterPcl.Tests.ListTests
       ""truncated"":false,
       ""id"":196286812220690433,
       ""geo"":null,
-      ""text"":""so using this approach i don't even need to sign my assemblies. well that lessens the complexity a bit. yay!""
+      ""full_text"":""so using this approach i don't even need to sign my assemblies. well that lessens the complexity a bit. yay!""
    },
    {
       ""retweeted"":false,
@@ -1729,7 +1729,7 @@ namespace LinqToTwitterPcl.Tests.ListTests
       ""truncated"":false,
       ""id"":196286622063525889,
       ""geo"":null,
-      ""text"":""Tudo bem n\u00e3o ter anvisa aqui no aeroporto, mas ent\u00e3o coloca um bom rod\u00edzio de carnes vai...""
+      ""full_text"":""Tudo bem n\u00e3o ter anvisa aqui no aeroporto, mas ent\u00e3o coloca um bom rod\u00edzio de carnes vai...""
    },
    {
       ""retweeted"":false,
@@ -1791,7 +1791,7 @@ namespace LinqToTwitterPcl.Tests.ListTests
       ""truncated"":false,
       ""id"":196286470443642880,
       ""geo"":null,
-      ""text"":""I unlocked the Get a cube achievement on Fez! http:\/\/t.co\/Hqhl5oix""
+      ""full_text"":""I unlocked the Get a cube achievement on Fez! http:\/\/t.co\/Hqhl5oix""
    },
    {
       ""retweeted"":false,
@@ -1898,7 +1898,7 @@ namespace LinqToTwitterPcl.Tests.ListTests
             -41.9644758
          ]
       },
-      ""text"":""A id\u00e9ia \u00e9 que eu aguente segurar at\u00e9 l\u00e1, mas t\u00e1 dificil \""@BrayanCordeiro: @devnetgomez MENTIRA que ele vai nascer no mesmo dia que eu?! &lt;3\""""
+      ""full_text"":""A id\u00e9ia \u00e9 que eu aguente segurar at\u00e9 l\u00e1, mas t\u00e1 dificil \""@BrayanCordeiro: @devnetgomez MENTIRA que ele vai nascer no mesmo dia que eu?! &lt;3\""""
    }
 ]";
     }
