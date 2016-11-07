@@ -156,6 +156,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Status\EmbeddedStatusAlignment.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Status\FilterLevel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Status\Retweet.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Status\ExtendedStatus.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Status\Status.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Status\StatusAction.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Status\StatusMetaData.cs" />
