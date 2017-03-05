@@ -103,16 +103,19 @@ namespace LinqToTwitter
             User = new User(status.GetValue<JsonData>("user"));
             Users = new List<ulong>();
 
-			if( Truncated )
+			if (Truncated)
 			{
-				var ext = new ExtendedStatus( status.GetValue<JsonData>( "extended_tweet" ) );
+				var ext = new ExtendedStatus(status.GetValue<JsonData>("extended_tweet"));
 				Text = ext.FullText;
 
-				Entities.HashTagEntities.AddRange( ext.Entities.HashTagEntities );
-				Entities.MediaEntities.AddRange( ext.Entities.MediaEntities );
-				Entities.SymbolEntities.AddRange( ext.Entities.SymbolEntities );
-				Entities.UrlEntities.AddRange( ext.Entities.UrlEntities );
-				Entities.UserMentionEntities.AddRange( ext.Entities.UserMentionEntities );
+				if (ext.Entities != null)
+				{
+					Entities.HashTagEntities.AddRange(ext.Entities.HashTagEntities);
+					Entities.MediaEntities.AddRange(ext.Entities.MediaEntities);
+					Entities.SymbolEntities.AddRange(ext.Entities.SymbolEntities);
+					Entities.UrlEntities.AddRange(ext.Entities.UrlEntities);
+					Entities.UserMentionEntities.AddRange(ext.Entities.UserMentionEntities);
+				}
 			}
         }
 
