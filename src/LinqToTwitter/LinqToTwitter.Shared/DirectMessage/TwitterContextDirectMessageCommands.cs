@@ -17,10 +17,10 @@ namespace LinqToTwitter
         public async Task<DirectMessage> NewDirectMessageAsync(string screenName, string text, CancellationToken cancelToken = default(CancellationToken))
         {
             if (string.IsNullOrWhiteSpace(screenName))
-                throw new ArgumentException("screenName is a required parameter.", "screenName");
+                throw new ArgumentException("screenName is a required parameter.", nameof( screenName ));
 
             if (string.IsNullOrWhiteSpace(text))
-                throw new ArgumentException("text is a required parameter.", "text");
+                throw new ArgumentException("text is a required parameter.", nameof( text ));
 
             var newUrl = BaseUrl + "direct_messages/new.json";
 
@@ -49,10 +49,10 @@ namespace LinqToTwitter
         public async Task<DirectMessage> NewDirectMessageAsync(ulong userID, string text, CancellationToken cancelToken = default(CancellationToken))
         {
             if (userID == 0)
-                throw new ArgumentException("userID must be set.", "userID");
+                throw new ArgumentException("userID must be set.", nameof( userID ));
 
             if (string.IsNullOrWhiteSpace(text))
-                throw new ArgumentException("text is a required parameter.", "text");
+                throw new ArgumentException("text is a required parameter.", nameof( text ));
 
             var newUrl = BaseUrl + "direct_messages/new.json";
 
@@ -81,7 +81,7 @@ namespace LinqToTwitter
         public async Task<DirectMessage> DestroyDirectMessageAsync(ulong id, bool includeEntites, CancellationToken cancelToken = default(CancellationToken))
         {
             if (id == 0)
-                throw new ArgumentNullException("id", "id is required.");
+                throw new ArgumentNullException(nameof( id ), "id is required.");
 
             var destroyUrl = BaseUrl + "direct_messages/destroy.json";
 

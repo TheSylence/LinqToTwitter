@@ -107,13 +107,13 @@ namespace LinqToTwitter
             var accountUrl = BaseUrl + "account/update_profile_image.json";
 
             if (image == null || image.Length == 0)
-                throw new ArgumentException("image is required.", "image");
+                throw new ArgumentException("image is required.", nameof( image ));
 
             if (string.IsNullOrWhiteSpace(fileName))
-                throw new ArgumentException("fileName is required.", "fileName");
+                throw new ArgumentException("fileName is required.", nameof( fileName ));
 
             if (string.IsNullOrWhiteSpace(imageType))
-                throw new ArgumentException("imageType is required.", "imageType");
+                throw new ArgumentException("imageType is required.", nameof( imageType ));
 
             var reqProc = new UserRequestProcessor<User>();
             var parameters = new Dictionary<string, string>
@@ -250,16 +250,16 @@ namespace LinqToTwitter
                 throw new ArgumentException("At least one of the text fields (name, email, url, location, or description) must be provided as arguments, but none are specified.", NoInputParam);
 
             if (!string.IsNullOrWhiteSpace(name) && name.Length > 20)
-                throw new ArgumentException("name must be no longer than 20 characters", "name");
+                throw new ArgumentException("name must be no longer than 20 characters", nameof( name ));
 
             if (!string.IsNullOrWhiteSpace(url) && url.Length > 100)
-                throw new ArgumentException("url must be no longer than 100 characters", "url");
+                throw new ArgumentException("url must be no longer than 100 characters", nameof( url ));
 
             if (!string.IsNullOrWhiteSpace(location) && location.Length > 30)
-                throw new ArgumentException("location must be no longer than 30 characters", "location");
+                throw new ArgumentException("location must be no longer than 30 characters", nameof( location ));
 
             if (!string.IsNullOrWhiteSpace(description) && description.Length > 160)
-                throw new ArgumentException("description must be no longer than 160 characters", "description");
+                throw new ArgumentException("description must be no longer than 160 characters", nameof( description ));
 
             var reqProc = new UserRequestProcessor<User>();
 
@@ -393,13 +393,13 @@ namespace LinqToTwitter
             var accountUrl = BaseUrl + "account/update_profile_banner.json";
 
             if (banner == null || banner.Length == 0)
-                throw new ArgumentException("banner is required.", "banner");
+                throw new ArgumentException("banner is required.", nameof( banner ));
 
             if (string.IsNullOrWhiteSpace(fileName))
-                throw new ArgumentException("fileName is required.", "fileName");
+                throw new ArgumentException("fileName is required.", nameof( fileName ));
 
             if (string.IsNullOrWhiteSpace(imageType))
-                throw new ArgumentException("imageType is required.", "imageType");
+                throw new ArgumentException("imageType is required.", nameof( imageType ));
 
             var parameters = new Dictionary<string, string>
             {

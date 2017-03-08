@@ -57,17 +57,17 @@ namespace LinqToTwitter
         {
             if (provider == null)
             {
-                throw new ArgumentNullException("provider");
+                throw new ArgumentNullException(nameof( provider ));
             }
 
             if (expression == null)
             {
-                throw new ArgumentNullException("expression");
+                throw new ArgumentNullException(nameof( expression ));
             }
 
             if (!typeof(IQueryable<T>).GetTypeInfo().IsAssignableFrom(expression.Type.GetTypeInfo()))
             {
-                throw new ArgumentOutOfRangeException("expression");
+                throw new ArgumentOutOfRangeException(nameof( expression ));
             }
 
             Provider = provider;

@@ -17,7 +17,7 @@ namespace LinqToTwitter
         public async Task<User> CreateFriendshipAsync(ulong userID, bool follow, CancellationToken cancelToken = default(CancellationToken))
         {
             if (userID == 0)
-                throw new ArgumentException("userID is a required parameter.", "userID");
+                throw new ArgumentException("userID is a required parameter.", nameof( userID ));
 
             string destroyUrl = BaseUrl + "friendships/create.json";
 
@@ -53,7 +53,7 @@ namespace LinqToTwitter
         public async Task<User> CreateFriendshipAsync(string screenName, bool follow, CancellationToken cancelToken = default(CancellationToken))
         {
             if (string.IsNullOrWhiteSpace(screenName))
-                throw new ArgumentException("screenName is a required parameter.", "screenName");
+                throw new ArgumentException("screenName is a required parameter.", nameof( screenName ));
 
             string destroyUrl = BaseUrl + "friendships/create.json";
 
@@ -88,7 +88,7 @@ namespace LinqToTwitter
         public async Task<User> DestroyFriendshipAsync(ulong userID, CancellationToken cancelToken = default(CancellationToken))
         {
             if (userID == 0)
-                throw new ArgumentException("userID is a required parameter.", "userID");
+                throw new ArgumentException("userID is a required parameter.", nameof( userID ));
 
             string destroyUrl = BaseUrl + "friendships/destroy.json";
 
@@ -115,7 +115,7 @@ namespace LinqToTwitter
         public async Task<User> DestroyFriendshipAsync(string screenName, CancellationToken cancelToken = default(CancellationToken))
         {
             if (string.IsNullOrWhiteSpace(screenName))
-                throw new ArgumentException("screenName is a required parameter.", "screenName");
+                throw new ArgumentException("screenName is a required parameter.", nameof( screenName ));
 
             string destroyUrl = BaseUrl + "friendships/destroy.json";
 
@@ -145,7 +145,7 @@ namespace LinqToTwitter
         public async Task<Friendship> UpdateFriendshipSettingsAsync(string screenName, bool retweets, bool device, CancellationToken cancelToken = default(CancellationToken))
         {
             if (string.IsNullOrWhiteSpace(screenName))
-                throw new ArgumentNullException("screenName", "screenName is a required parameter.");
+                throw new ArgumentNullException(nameof( screenName ), "screenName is a required parameter.");
 
             return await UpdateFriendshipSettingsAsync(0, screenName, retweets, device, cancelToken).ConfigureAwait(false);
         }
@@ -160,7 +160,7 @@ namespace LinqToTwitter
         public async Task<Friendship> UpdateFriendshipSettingsAsync(ulong userID, bool retweets, bool device, CancellationToken cancelToken = default(CancellationToken))
         {
             if (userID == 0)
-                throw new ArgumentNullException("userID", "userID is a required parameter.");
+                throw new ArgumentNullException(nameof( userID ), "userID is a required parameter.");
 
             return await UpdateFriendshipSettingsAsync(0, null, retweets, device, cancelToken).ConfigureAwait(false);
         }

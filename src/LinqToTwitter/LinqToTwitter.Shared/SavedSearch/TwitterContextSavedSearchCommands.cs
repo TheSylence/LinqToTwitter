@@ -16,7 +16,7 @@ namespace LinqToTwitter
         public async Task<SavedSearch> CreateSavedSearchAsync(string query, CancellationToken cancelToken = default(CancellationToken))
         {
             if (string.IsNullOrWhiteSpace(query))
-                throw new ArgumentException("query is required.", "query");
+                throw new ArgumentException("query is required.", nameof( query ));
 
             var savedSearchUrl = BaseUrl + "saved_searches/create.json";
 
@@ -44,7 +44,7 @@ namespace LinqToTwitter
         public async Task<SavedSearch> DestroySavedSearchAsync(ulong id, CancellationToken cancelToken = default(CancellationToken))
         {
             if (id == 0)
-                throw new ArgumentException("Invalid Saved Search ID: " + id, "id");
+                throw new ArgumentException("Invalid Saved Search ID: " + id, nameof( id ));
 
             var savedSearchUrl = BaseUrl + "saved_searches/destroy/" + id + ".json";
 

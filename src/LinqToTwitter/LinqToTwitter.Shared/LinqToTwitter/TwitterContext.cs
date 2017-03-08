@@ -49,7 +49,7 @@ namespace LinqToTwitter
         public TwitterContext(ITwitterExecute execute)
         {
             if (execute == null)
-                throw new ArgumentNullException("execute", "TwitterExecutor is required.");
+                throw new ArgumentNullException(nameof( execute ), "TwitterExecutor is required.");
 
             TwitterExecutor = execute;
 

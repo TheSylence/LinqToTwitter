@@ -16,7 +16,7 @@ namespace LinqToTwitter
         public async Task<User> ReportSpamAsync(ulong userID, CancellationToken cancelToken = default(CancellationToken))
         {
             if (userID == 0)
-                throw new ArgumentException("Twitter doesn't have a user with ID == 0", "userID");
+                throw new ArgumentException("Twitter doesn't have a user with ID == 0", nameof( userID ));
 
             var reportParams = new Dictionary<string, string>
             {
@@ -35,7 +35,7 @@ namespace LinqToTwitter
         public async Task<User> ReportSpamAsync(string screenName, CancellationToken cancelToken = default(CancellationToken))
         {
             if (string.IsNullOrWhiteSpace(screenName))
-                throw new ArgumentException("Please supply a valid screen name", "screenName");
+                throw new ArgumentException("Please supply a valid screen name", nameof( screenName ));
 
             var reportParams = new Dictionary<string, string>
             {

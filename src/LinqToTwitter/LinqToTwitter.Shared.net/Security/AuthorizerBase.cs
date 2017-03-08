@@ -114,7 +114,7 @@ namespace LinqToTwitter
         public async Task GetRequestTokenAsync(string callback)
         {
             if (string.IsNullOrWhiteSpace(callback))
-                throw new ArgumentNullException("callback", "callback is required.");
+                throw new ArgumentNullException(nameof( callback ), "callback is required.");
 
             Parameters.Add("oauth_callback", EncodeToProtectMultiByteCharUrls(callback));
             Parameters.Remove("oauth_token");

@@ -10,7 +10,7 @@ namespace LinqToTwitter
     {
         public const ulong MissingID = 0ul;
         public const ulong NoReply = 0ul;
-        public const decimal NoCoordinate = Decimal.MaxValue;
+        public static readonly decimal NoCoordinate = Decimal.MaxValue;
 
         /// <summary>
         /// Replies to a tweet.
@@ -92,7 +92,7 @@ namespace LinqToTwitter
         public virtual async Task<Status> ReplyAsync(ulong tweetID, string status, decimal latitude, decimal longitude, string placeID, bool displayCoordinates, bool trimUser)
         {
             if (tweetID == MissingID)
-                throw new ArgumentException("0 is *not* a valid tweetID. You must provide the ID of the tweet you're replying to.", "tweetID");
+                throw new ArgumentException("0 is *not* a valid tweetID. You must provide the ID of the tweet you're replying to.", nameof( tweetID ));
 
             return await TweetOrReplyAsync(tweetID, status, latitude, longitude, placeID, displayCoordinates, trimUser, null).ConfigureAwait(false);
         }
@@ -109,7 +109,7 @@ namespace LinqToTwitter
         public async Task<Status> ReplyAsync(ulong tweetID, string status, IEnumerable<ulong> mediaIds)
         {
             if (tweetID == MissingID)
-                throw new ArgumentException("0 is *not* a valid tweetID. You must provide the ID of the tweet you're replying to.", "tweetID");
+                throw new ArgumentException("0 is *not* a valid tweetID. You must provide the ID of the tweet you're replying to.", nameof( tweetID ));
 
             return await TweetOrReplyAsync(tweetID, status, NoCoordinate, NoCoordinate, NoInputParam, false, false, mediaIds).ConfigureAwait(false);
         }
@@ -131,7 +131,7 @@ namespace LinqToTwitter
         public virtual async Task<Status> ReplyAsync(ulong tweetID, string status, decimal latitude, decimal longitude, string placeID, bool displayCoordinates, bool trimUser, IEnumerable<ulong> mediaIds)
         {
             if (tweetID == MissingID)
-                throw new ArgumentException("0 is *not* a valid tweetID. You must provide the ID of the tweet you're replying to.", "tweetID");
+                throw new ArgumentException("0 is *not* a valid tweetID. You must provide the ID of the tweet you're replying to.", nameof( tweetID ));
 
             return await TweetOrReplyAsync(tweetID, status, latitude, longitude, placeID, displayCoordinates, trimUser, mediaIds).ConfigureAwait(false);
         }
@@ -252,7 +252,7 @@ namespace LinqToTwitter
         internal virtual async Task<Status> TweetOrReplyAsync(ulong tweetID, string status, decimal latitude, decimal longitude, string placeID, bool displayCoordinates, bool trimUser, IEnumerable<ulong> mediaIds, CancellationToken cancelToken = default(CancellationToken))
         {
             if (string.IsNullOrWhiteSpace(status) && (mediaIds == null || !mediaIds.Any()))
-                throw new ArgumentException("status is a required parameter.", "status");
+                throw new ArgumentException("status is a required parameter.", nameof( status ));
 
             var updateUrl = BaseUrl + "statuses/update.json";
 
@@ -285,7 +285,7 @@ namespace LinqToTwitter
         public virtual async Task<Status> DeleteTweetAsync(ulong tweetID, CancellationToken cancelToken = default(CancellationToken))
         {
             if (tweetID == MissingID)
-                throw new ArgumentException("0 is *not* a valid tweetID. You must provide the ID of the tweet you're deleting.", "tweetID");
+                throw new ArgumentException("0 is *not* a valid tweetID. You must provide the ID of the tweet you're deleting.", nameof( tweetID ));
 
             var destroyUrl = BaseUrl + "statuses/destroy/" + tweetID + ".json";
 
@@ -305,7 +305,7 @@ namespace LinqToTwitter
         public virtual async Task<Status> RetweetAsync(ulong tweetID, CancellationToken cancelToken = default(CancellationToken))
         {
             if (tweetID == MissingID)
-                throw new ArgumentException("0 is *not* a valid tweetID. You must provide the ID of the tweet you're retweeting.", "tweetID");
+                throw new ArgumentException("0 is *not* a valid tweetID. You must provide the ID of the tweet you're retweeting.", nameof( tweetID ));
 
             var retweetUrl = BaseUrl + "statuses/retweet/" + tweetID + ".json";
 

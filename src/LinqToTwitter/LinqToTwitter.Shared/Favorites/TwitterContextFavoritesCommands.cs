@@ -27,7 +27,7 @@ namespace LinqToTwitter
         public async Task<Status> CreateFavoriteAsync(ulong id, bool includeEntities, CancellationToken cancelToken = default(CancellationToken))
         {
             if (id == 0)
-                throw new ArgumentException("id is a required parameter.", "id");
+                throw new ArgumentException("id is a required parameter.", nameof( id ));
 
             var favoritesUrl = BaseUrl + "favorites/create.json";
 
@@ -66,7 +66,7 @@ namespace LinqToTwitter
         public async Task<Status> DestroyFavoriteAsync(ulong id, bool includeEntities, CancellationToken cancelToken = default(CancellationToken))
         {
             if (id == 0)
-                throw new ArgumentException("id is a required parameter.", "id");
+                throw new ArgumentException("id is a required parameter.", nameof( id ));
 
             var favoritesUrl = BaseUrl + "favorites/destroy.json";
 

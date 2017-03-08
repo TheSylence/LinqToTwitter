@@ -16,7 +16,7 @@ namespace LinqToTwitter
         public async Task<User> MuteAsync(string screenName, CancellationToken cancelToken = default(CancellationToken))
         {
             if (string.IsNullOrWhiteSpace(screenName))
-                throw new ArgumentNullException("screenName", "screenName is required");
+                throw new ArgumentNullException(nameof( screenName ), "screenName is required");
 
             var muteParams = new Dictionary<string, string> { { "screen_name", screenName } };
 
@@ -31,7 +31,7 @@ namespace LinqToTwitter
         public async Task<User> MuteAsync(ulong userID, CancellationToken cancelToken = default(CancellationToken))
         {
             if (userID == 0)
-                throw new ArgumentException("userID can't be 0 - no user has this ID", "userID");
+                throw new ArgumentException("userID can't be 0 - no user has this ID", nameof( userID ));
 
             var muteParams = new Dictionary<string, string> { { "user_id", userID.ToString() } };
 
@@ -60,7 +60,7 @@ namespace LinqToTwitter
         public async Task<User> UnMuteAsync(string screenName, CancellationToken cancelToken = default(CancellationToken))
         {
             if (string.IsNullOrWhiteSpace(screenName))
-                throw new ArgumentNullException("screenName", "screenName is required");
+                throw new ArgumentNullException(nameof( screenName ), "screenName is required");
 
             var muteParams = new Dictionary<string, string> { { "screen_name", screenName } };
 
@@ -75,7 +75,7 @@ namespace LinqToTwitter
         public async Task<User> UnMuteAsync(ulong userID, CancellationToken cancelToken = default(CancellationToken))
         {
             if (userID == 0)
-                throw new ArgumentException("userID can't be 0 - no user has this ID", "userID");
+                throw new ArgumentException("userID can't be 0 - no user has this ID", nameof( userID ));
 
             var muteParams = new Dictionary<string, string> { { "user_id", userID.ToString() } };
 

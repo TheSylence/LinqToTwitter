@@ -87,7 +87,7 @@ namespace LinqToTwitter
         public static string BuildQueryString(IEnumerable<QueryParameter> parameters)
         {
             if (parameters == null)
-                throw new ArgumentNullException("parameters");
+                throw new ArgumentNullException(nameof( parameters ));
 
             StringBuilder builder = new StringBuilder();
             foreach (var pair in parameters.Where(p => !string.IsNullOrWhiteSpace(p.Value)))

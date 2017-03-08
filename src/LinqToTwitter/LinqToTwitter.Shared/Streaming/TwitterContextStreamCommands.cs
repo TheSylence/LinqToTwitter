@@ -16,7 +16,7 @@ namespace LinqToTwitter
         /// <returns>Control Stream with CommandResponse property for Twitter's response message</returns>
         public async Task<ControlStream> AddSiteStreamUserAsync(List<ulong> userIDs, string streamID, CancellationToken cancelToken = default(CancellationToken))
         {
-            if (string.IsNullOrWhiteSpace(streamID)) throw new ArgumentNullException("streamID", "streamID is required.");
+            if (string.IsNullOrWhiteSpace(streamID)) throw new ArgumentNullException(nameof( streamID ), "streamID is required.");
 
             var newUrl = SiteStreamUrl + "site/c/" + streamID + "/add_user.json";
 
@@ -45,7 +45,7 @@ namespace LinqToTwitter
         /// <returns>Control Stream with CommandResponse property for Twitter's response message</returns>
         public async Task<ControlStream> RemoveSiteStreamUserAsync(List<ulong> userIDs, string streamID, CancellationToken cancelToken = default(CancellationToken))
         {
-            if (string.IsNullOrWhiteSpace(streamID)) throw new ArgumentNullException("streamID", "streamID is required.");
+            if (string.IsNullOrWhiteSpace(streamID)) throw new ArgumentNullException(nameof( streamID ), "streamID is required.");
 
             var newUrl = SiteStreamUrl + "site/c/" + streamID + "/remove_user.json";
 

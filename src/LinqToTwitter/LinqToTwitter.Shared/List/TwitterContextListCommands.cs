@@ -23,7 +23,7 @@ namespace LinqToTwitter
         public async Task<List> CreateListAsync(string listName, string mode, string description, CancellationToken cancelToken = default(CancellationToken))
         {
             if (string.IsNullOrWhiteSpace(listName))
-                throw new ArgumentException("listName is required.", "listName");
+                throw new ArgumentException("listName is required.", nameof( listName ));
 
             var createUrl = BaseUrl + "lists/create.json";
 
@@ -207,10 +207,10 @@ namespace LinqToTwitter
         public async Task<List> AddMemberRangeToListAsync(ulong listID, string slug, ulong ownerID, string ownerScreenName, List<string> screenNames, CancellationToken cancelToken = default(CancellationToken))
         {
             if (screenNames == null || screenNames.Count == 0)
-                throw new ArgumentException("screenNames is required. Check to see if the argument is null or the List<string> is empty.", "screenNames");
+                throw new ArgumentException("screenNames is required. Check to see if the argument is null or the List<string> is empty.", nameof( screenNames ));
 
             if (screenNames != null && screenNames.Count > 100)
-                throw new ArgumentException("Max screenNames is 100 at a time.", "screenNames");
+                throw new ArgumentException("Max screenNames is 100 at a time.", nameof( screenNames ));
 
             return await AddMemberRangeToListAsync(listID, slug, ownerID, ownerScreenName, userIDs: null, screenNames: screenNames, cancelToken: cancelToken).ConfigureAwait(false);
         }
@@ -227,10 +227,10 @@ namespace LinqToTwitter
         public async Task<List> AddMemberRangeToListAsync(ulong listID, string slug, ulong ownerID, string ownerScreenName, List<ulong> userIDs, CancellationToken cancelToken = default(CancellationToken))
         {
             if (userIDs == null || userIDs.Count == 0)
-                throw new ArgumentException("userIDs is required. Check to see if the argument is null or the List<ulong> is empty.", "userIDs");
+                throw new ArgumentException("userIDs is required. Check to see if the argument is null or the List<ulong> is empty.", nameof( userIDs ));
 
             if (userIDs != null && userIDs.Count > 100)
-                throw new ArgumentException("Max user IDs is 100 at a time.", "userIDs");
+                throw new ArgumentException("Max user IDs is 100 at a time.", nameof( userIDs ));
 
             return await AddMemberRangeToListAsync(listID, slug, ownerID, ownerScreenName, userIDs, screenNames: null, cancelToken: cancelToken).ConfigureAwait(false);
         }
@@ -447,7 +447,7 @@ namespace LinqToTwitter
 
             if ((userIDs != null && userIDs.Count > 100) || 
                 (screenNames != null && screenNames.Count > 100))
-                throw new ArgumentException("You can only remove 100 members at a Time.", "userIDs");
+                throw new ArgumentException("You can only remove 100 members at a Time.", nameof( userIDs ));
 
             var destroyAllUrl = BaseUrl + "lists/members/destroy_all.json";
 
